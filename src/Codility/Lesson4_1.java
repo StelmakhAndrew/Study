@@ -9,7 +9,7 @@ public class Lesson4_1 {
 
     public static int solution(int[] A) {
         Arrays.sort(A);
-//        if (A[0] != 1) return 0;
+        if (A[0] != 1) return 0;
         for (int i = 0; i <A.length-1 ; i++) {
             if(A[i+1] - A[i]!=1)return 0;
         }
