@@ -2,10 +2,11 @@ package Codility;
 
 public class Task1 {
     public static void main(String[] args) {
-        System.out.println(solution(5));
-        System.out.println(solution(529));
-        System.out.println(solution(32));
-        System.out.println(solution(1041));
+//        System.out.println(solution(5));
+//        System.out.println(solution(529));
+//        System.out.println(solution(32));
+//        System.out.println(solution(1041));
+        System.out.println(solution(561892));
     }
     public static int solution(int N) {
         String b ="";
@@ -27,10 +28,11 @@ public class Task1 {
                 count++;
             } else if (ss[i] == '1')
             {
-                if (count> maxLen) {
+                if (count>= maxLen) {
                     maxLen = count;
-                    count = 0;
+
                 }
+                count = 0;
             }
         }
         return maxLen;
