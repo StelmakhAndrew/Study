@@ -5,9 +5,12 @@ import java.util.Arrays;
 public class Lesson2 {
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(solution(new int[]{3, 8,  9}, 1)));
+        System.out.println(Arrays.toString(solution(new int[]{}, 1)));
     }
     public static int[] solution(int[] A, int K) {
+        if (A.length ==0)
+            return A;
+
         K = K % A.length;
 
         if (K == 0)return A;
