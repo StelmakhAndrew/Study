@@ -2,7 +2,7 @@ package Codility;
 
 import java.util.Arrays;
 
-public class Lesson3 {
+public class Lesson2_2 {
     public static void main(String[] args) {
         System.out.println(solution(new int[]{3, 4, 2, 4, 2, 9, 3, 5, 6, 6, 8, 5, 7, 7, 8}));
     }
