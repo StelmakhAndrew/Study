@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Lesson2 {
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(solution(new int[]{}, 1)));
+        System.out.println(Arrays.toString(solution(new int[]{2,5,3,2}, 3)));
     }
 
     public static int[] solution(int[] A, int K) {
@@ -17,16 +17,11 @@ public class Lesson2 {
 
         if (K == 0) return A;
         int[] resualt1;
-        int[] resualt2;
         int[] resualt;
 
         resualt1 = Arrays.copyOfRange(A, len - K, len);
-        System.out.println(Arrays.toString(resualt1));
-        resualt2 = Arrays.copyOfRange(A, 0, len - K);
-        System.out.println(Arrays.toString(resualt2));
-
         resualt = Arrays.copyOf(resualt1, len);
-        System.arraycopy(resualt2, 0, resualt, resualt1.length, resualt2.length);
+        System.arraycopy(Arrays.copyOfRange(A, 0, len - K), 0, resualt, resualt1.length, len - K);
 
         return resualt;
     }
