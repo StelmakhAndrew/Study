@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Lesson2_1 {
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(solution(new int[]{2,5,3,2}, 3)));
+        System.out.println(Arrays.toString(solution(new int[]{2, 5, 3, 2}, 3)));
     }
 
     public static int[] solution(int[] A, int K) {
