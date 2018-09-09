@@ -6,9 +6,9 @@ public class Task1 {
 //        System.out.println(solution(529));
 //        System.out.println(solution(32));
 //        System.out.println(solution(1041));
-        System.out.println(solution(561892));
+//        System.out.println(solution(561892));
     }
-    public static int solution(int N) {
+    private static int solution(int N) {
         String b ="";
         while(N !=0 ) {
             b = b +(N % 2);
@@ -19,20 +19,18 @@ public class Task1 {
         int maxLen= 0 ;
         int count = 0;
         boolean flag = false;
-        for (int i = 0; i < ss.length ; i++) {
-            if (ss[i] == '1'){
-                flag =true;
+        for (char s : ss) {
+            if (s == '1') {
+                flag = true;
             }
-            if (ss[i] == '0' && flag )
-            {
+            if (s == '0' && flag) {
                 count++;
-            } else if (ss[i] == '1')
-            {
-                if (count>= maxLen) {
+            } else if (s == '1') {
+                if (count >= maxLen) {
                     maxLen = count;
 
                 }
-                count = 0;
+
             }
         }
         return maxLen;
