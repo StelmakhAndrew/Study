@@ -13,7 +13,7 @@ public class Lesson4_3 {
         int[] counter = new int [N];
         int max=0;
         for (int elem:A) {
-            if (elem  < N ){
+            if (elem  <= N ){
                 counter[elem-1]++;
                 if(max < counter[elem -1 ]) max = counter[elem - 1];
             }
