@@ -40,7 +40,7 @@ public class Table {
         System.out.println("key = " + key);
         if (key.equals(lastKey)){
             countEnter++;
-            if (countEnter == coincidence.size()-1) countEnter =0;
+            if (countEnter == coincidence.size()) countEnter =0;
             lastKey = key;
             return coincidence.get(countEnter);
         }
