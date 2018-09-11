@@ -12,7 +12,7 @@ public class Table {
     private String lastKey = "";
     private int countEnter = 0;
 
-    public Table(int size) {
+    Table(int size) {
         if (size < 0) throw new NegativeArraySizeException("Negative size");
         this.size = size;
         table = new ArrayList<>(size);
@@ -22,7 +22,8 @@ public class Table {
 
     @Override
     public String toString() {
-        StringBuilder result = new StringBuilder();
+        StringBuilder result = new StringBuilder("BOX \n");
+
         for (String elem : table) {
             result.append("{").append(elem).append("}").append('\n');
         }
@@ -64,14 +65,14 @@ public class Table {
         }
     }
 
-    private int compare(String key) {
+    private void compare(String key) {
         char[] keyArray = key.toCharArray();
         int max = 0;
         for (String value : table) {
             max = 0;
             int count = 0;
             int k = 0;
-            for (int i = 0; k < key.length(); i++) {
+            for (; k < key.length(); ) {
                 char[] valueArray = value.toCharArray();
                 for (int j = 0; j < valueArray.length; j++) {
                     {
@@ -84,7 +85,7 @@ public class Table {
                             if (k == key.length()) {
                                 if (count > max) max = count;
                             }
-                            if (count == keyArray.length) return count;
+
                         } else {
                             if (count > max) max = count;
                             if (count != 0) {
@@ -101,6 +102,6 @@ public class Table {
             }
             allСoincidence(max, value);
         }
-        return max;
+
     }
 }

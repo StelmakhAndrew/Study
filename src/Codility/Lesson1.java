@@ -1,6 +1,6 @@
 package Codility;
 
-public class Task1 {
+public class Lesson1 {
     public static void main(String[] args) {
 //        System.out.println(solution(5));
 //        System.out.println(solution(529));
