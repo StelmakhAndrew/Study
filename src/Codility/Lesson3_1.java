@@ -10,6 +10,4 @@ public class Lesson3_1 {
         if ((X + D * result) >= Y) return result;
         return result + 1;
     }
-
-
 }
