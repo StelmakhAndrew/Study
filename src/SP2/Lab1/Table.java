@@ -6,11 +6,15 @@ public class Table {
 
 
     private ArrayList<String> table;
-    private ArrayList<Integer> coincidence = new ArrayList<>();
+    private ArrayList<Pair> coincidence = new ArrayList<>();
     private int large = 0;
+    private int size = 0;
+    private String lastKey = "";
+    private int countEnter = 0;
 
     public Table(int size) {
         if (size < 0) throw new NegativeArraySizeException("Negative size");
+        this.size = size;
         table = new ArrayList<>(size);
         table.add("GARAnt");
        table.add("Patriot");
@@ -30,29 +34,43 @@ public class Table {
         table.add(elem);
     }
 
-    private void allСoincidence(int count) {
-        if (count == large) {
 
-            coincidence.add(count);
+    public Pair choiceElem(String key){
+        System.out.println("key = " + key);
+        if (key.equals(lastKey)){
+            countEnter++;
+            if (countEnter == coincidence.size()-1) countEnter =0;
+            lastKey = key;
+            return coincidence.get(countEnter);
+        }
+        else {
+            countEnter = 0;
+            lastKey = key;
+            large = 0;
+            coincidence.clear();
+            compare(key);
+            return coincidence.get(countEnter);
+        }
+    }
+
+    private void allСoincidence(int count , String value) {
+        if (count == large) {
+            coincidence.add(new Pair(count,value));
         }
         if (count > large) {
             large = count;
             coincidence.clear();
-            coincidence.add(count);
-
+            coincidence.add(new Pair(count,value));
         }
-        System.out.println(coincidence);
     }
 
-    public int compare(String key) {
+    private int compare(String key) {
         char[] keyArray = key.toCharArray();
         int max = 0;
         for (String value : table) {
             max = 0;
             int count = 0;
             int k = 0;
-
-
             for (int i = 0; k < key.length(); i++) {
                 char[] valueArray = value.toCharArray();
                 for (int j = 0; j < valueArray.length; j++) {
@@ -81,7 +99,7 @@ public class Table {
                 }
                 k++;
             }
-            allСoincidence(max);
+            allСoincidence(max, value);
         }
         return max;
     }
