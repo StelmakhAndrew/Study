@@ -17,6 +17,8 @@ public class Lesson4_3 {
                 counter[elem-1]++;
                 if(max < counter[elem -1 ]) max = counter[elem - 1];
             }
+
+
             else {
                 for (int i = 0; i <counter.length ; i++) {
                     counter[i] = max;
