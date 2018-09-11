@@ -1,7 +1,7 @@
 package Codility;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+    import java.util.Arrays;
 
 public class Lesson4_3 {
     public static void main(String[] args) {
@@ -10,20 +10,16 @@ public class Lesson4_3 {
     }
 
     public static int[] solution(int N, int[] A) {
-
         int[] counter = new int [N];
+        int max=0;
         for (int elem:A) {
             if (elem  < N ){
                 counter[elem-1]++;
+                if(max < counter[elem -1 ]) max = counter[elem - 1];
             }
             else {
-                int max=0;
-                for (int elemCount:counter  ) {
-                    if(max < elemCount) max = elemCount;
-                }
                 for (int i = 0; i <counter.length ; i++) {
                     counter[i] = max;
-
                 }
             }
         }
