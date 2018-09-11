@@ -36,8 +36,13 @@ public class Table {
     }
 
 
+    public String returne(String key){
+        Pair pair = choiceElem(key);
+        if (pair.getKey()==0) return "No match";
+        else return ""+ pair.getValue() + " - " + pair.getKey();
+    }
+
     public Pair choiceElem(String key){
-        System.out.println("key = " + key);
         if (key.equals(lastKey)){
             countEnter++;
             if (countEnter == coincidence.size()) countEnter =0;
