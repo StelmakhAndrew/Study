@@ -16,7 +16,7 @@ public class Table {
         if (size < 0) throw new NegativeArraySizeException("Negative size");
         this.size = size;
         table = new ArrayList<>(size);
-        table.add("GARAnt");
+        table.add("GARant");
        table.add("Patriot");
     }
 
@@ -36,7 +36,7 @@ public class Table {
     }
 
 
-    public String returne(String key){
+    public String searchSame(String key){
         Pair pair = choiceElem(key);
         if (pair.getKey()==0) return "No match";
         else return ""+ pair.getValue() + " - " + pair.getKey();
@@ -54,7 +54,7 @@ public class Table {
             lastKey = key;
             large = 0;
             coincidence.clear();
-            compare(key);
+            returned(key);
             return coincidence.get(countEnter);
         }
     }
@@ -70,7 +70,7 @@ public class Table {
         }
     }
 
-    private void compare(String key) {
+    private void returned(String key) {
         char[] keyArray = key.toCharArray();
         int max = 0;
         for (String value : table) {
