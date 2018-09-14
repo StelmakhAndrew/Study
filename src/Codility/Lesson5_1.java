@@ -4,8 +4,6 @@ public class Lesson5_1 {
     public static void main(String[] args) {
         System.out.println(solution(new int[]{1, 1,1,1,1,1, 1,1,1,1}));
     }
-
-
     public static int solution(int[] A) {
     int count = 0;
     long result = 0;
