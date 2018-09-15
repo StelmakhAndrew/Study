@@ -1,6 +1,6 @@
 package SP2.Lab2;
 
-import static SP2.Lab2.Graph.control;
+import static SP2.Lab2.Graph2.control;
 
 public class Main {
     public static void main(String[] args) {

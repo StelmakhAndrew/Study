@@ -8,7 +8,7 @@ public class Lesson3_3 {
 
     public static int solution(int[] A) {
         int sum1 = 0;
-        int sum2 = 0;
+        int sum2 ;
         int minDif = Integer.MAX_VALUE;
         int sumAr = 0;
         for (int elem : A) {
