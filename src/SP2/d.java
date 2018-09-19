@@ -3,17 +3,24 @@ package SP2;
 import Codility.Lesson2_1;
 import Shasa.L2_1;
 
+import java.math.BigInteger;
+
 public class d {
     public static void main(String[] args) {
-        int [] A = new int[]{3,4,7,6,5};
-        long time1 = System.nanoTime();
-        Lesson2_1.solution(A,35);
-        System.out.println(System.nanoTime() - time1);
+//        int [] A = new int[]{3,4,7,6,5};
+//        long time1 = System.nanoTime();
+//        Lesson2_1.solution(A,35);
+//        System.out.println(System.nanoTime() - time1);
+//
+//        A = new int[]{3,4,7,6,5};
+//        time1 = System.nanoTime();
+//        L2_1.solution(A,35);
+//        System.out.println(System.nanoTime() - time1);
+        System.out.println(20002 * 20002);
 
-        A = new int[]{3,4,7,6,5};
-        time1 = System.nanoTime();
-        L2_1.solution(A,35);
-        System.out.println(System.nanoTime() - time1);
+        Integer v = 555558;
+        BigInteger v3 = BigInteger.valueOf(555555);
+        System.out.println(v3.equals(v));
     }
 
 

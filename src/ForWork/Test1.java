@@ -4,17 +4,17 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 
 public class Test1 {
+    private static int element1 = 0;
+    private static int element2 = 0;
+    private static BigInteger polindrom = BigInteger.valueOf(0);
+
     public static void main(String[] args) {
-//        generate();
-        String elem = "123456787654321";
-        long starttime = System.nanoTime();
-        myPalindrom(elem);
-        System.out.println("time 1 " + (System.nanoTime() - starttime));
-
-        starttime = System.nanoTime();
-        palindrom(elem);
-        System.out.println("time 2 " + (System.nanoTime() - starttime));
-
+        long startTime = System.nanoTime();
+        generate();
+        System.out.println("time  " + (System.nanoTime() - startTime));
+        // time  17084950722
+        // time  17473502782
+        // time  16883939014
     }
 
     private static void generate() {
@@ -33,21 +33,33 @@ public class Test1 {
             if (Test2.rabinMiller(a7)) arrayList.add(a7);
             if (Test2.rabinMiller(a9)) arrayList.add(a9);
         }
+        int currentPolindrom;
+
         BigInteger result;
-        String stroka = "";
+        String stroka;
         for (int elem : arrayList) {
             for (int ee1 : arrayList) {
                 result = BigInteger.valueOf(elem * ee1);
                 stroka = String.valueOf(result);
-                if (myPalindrom(stroka)) System.out.println(stroka);
+                if (myPalindrom(stroka)) {
+                    if (result.compareTo(polindrom) > 0) {
+                        polindrom = result;
+                        element1 = elem;
+                        element2 = ee1;
+                    }
+                }
 
             }
         }
+        System.out.println(polindrom);
+        System.out.println(element2);
+        System.out.println(element1);
+
     }
 
-    private static boolean palindrom(String str) {
-        return str.equals(new StringBuilder().append(str).reverse().toString());
-    }
+//    private static boolean palindrom(String str) {
+//        return str.equals(new StringBuilder().append(str).reverse().toString());
+//    }
 
     private static boolean myPalindrom(String str) {
         char[] array = str.toCharArray();
@@ -58,4 +70,6 @@ public class Test1 {
         }
         return true;
     }
+
+
 }
