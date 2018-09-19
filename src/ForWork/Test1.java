@@ -12,9 +12,12 @@ public class Test1 {
         long startTime = System.nanoTime();
         generate();
         System.out.println("time  " + (System.nanoTime() - startTime));
-        // time  17084950722
-        // time  17473502782
-        // time  16883939014
+        // time  15563351246
+        // time  15774167723
+        // time  15778192562
+        //1997667991
+        //91009
+        //69143
     }
 
     private static void generate() {
@@ -37,16 +40,17 @@ public class Test1 {
 
         BigInteger result;
         String stroka;
-        for (int elem : arrayList) {
-            for (int ee1 : arrayList) {
-                result = BigInteger.valueOf(elem * ee1);
+        for (int k = arrayList.size() - 1; k > 0; k--) {
+            for (int d = arrayList.size() - 1; d > 0; d--) {
+                result = BigInteger.valueOf(arrayList.get(k) * arrayList.get(d));
                 stroka = String.valueOf(result);
                 if (myPalindrom(stroka)) {
                     if (result.compareTo(polindrom) > 0) {
                         polindrom = result;
-                        element1 = elem;
-                        element2 = ee1;
+                        element1 = arrayList.get(k);
+                        element2 = arrayList.get(d);
                     }
+                    break;
                 }
 
             }
