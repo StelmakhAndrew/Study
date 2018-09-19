@@ -15,7 +15,8 @@ public class Test1 {
        // 999949999
        // 30109
        // 33211
-       //  time  10185472461
+        // time  5503159510
+        // time  5459094986
     }
 
     private static void generate() {
@@ -39,11 +40,11 @@ public class Test1 {
 
         long result;
         String stroka;
-        for (int k = arrayList.size() - 1; k > 0; k--) {
+        for (int k = arrayList.size() - 1; k > index; k--) {
             for (int d = arrayList.size() - 1; d > 0; d--) {
                 result = (long)arrayList.get(k) * (long)arrayList.get(d);
                 stroka = String.valueOf(result);
-                if (palindrom(stroka)) {
+                if (myPalindrom(stroka)) {
                     if (result > polindrom) {
                         polindrom = result;
                         element1 = arrayList.get(k);
