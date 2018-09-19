@@ -6,18 +6,16 @@ import java.util.ArrayList;
 public class Test1 {
     private static int element1 = 0;
     private static int element2 = 0;
-    private static BigInteger polindrom = BigInteger.valueOf(0);
+    private static long polindrom = 0;
 
     public static void main(String[] args) {
         long startTime = System.nanoTime();
         generate();
         System.out.println("time  " + (System.nanoTime() - startTime));
-        // time  15563351246
-        // time  15774167723
-        // time  15778192562
-        //1997667991
-        //91009
-        //69143
+       // 999949999
+       // 30109
+       // 33211
+       //  time  10185472461
     }
 
     private static void generate() {
@@ -36,19 +34,21 @@ public class Test1 {
             if (Test2.rabinMiller(a7)) arrayList.add(a7);
             if (Test2.rabinMiller(a9)) arrayList.add(a9);
         }
-        int currentPolindrom;
+        int index =0 ;
+//        long startedTime = System.nanoTime();
 
-        BigInteger result;
+        long result;
         String stroka;
         for (int k = arrayList.size() - 1; k > 0; k--) {
             for (int d = arrayList.size() - 1; d > 0; d--) {
-                result = BigInteger.valueOf(arrayList.get(k) * arrayList.get(d));
+                result = (long)arrayList.get(k) * (long)arrayList.get(d);
                 stroka = String.valueOf(result);
-                if (myPalindrom(stroka)) {
-                    if (result.compareTo(polindrom) > 0) {
+                if (palindrom(stroka)) {
+                    if (result > polindrom) {
                         polindrom = result;
                         element1 = arrayList.get(k);
                         element2 = arrayList.get(d);
+                        index = d;
                     }
                     break;
                 }
@@ -58,12 +58,13 @@ public class Test1 {
         System.out.println(polindrom);
         System.out.println(element2);
         System.out.println(element1);
+//        System.out.println("time search " + (System.nanoTime() - startedTime));
 
     }
 
-//    private static boolean palindrom(String str) {
-//        return str.equals(new StringBuilder().append(str).reverse().toString());
-//    }
+    private static boolean palindrom(String str) {
+        return str.equals(new StringBuilder().append(str).reverse().toString());
+    }
 
     private static boolean myPalindrom(String str) {
         char[] array = str.toCharArray();

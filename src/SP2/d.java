@@ -16,11 +16,12 @@ public class d {
 //        time1 = System.nanoTime();
 //        L2_1.solution(A,35);
 //        System.out.println(System.nanoTime() - time1);
-        System.out.println(20002 * 20002);
+//        System.out.println(20002 * 20002);
 
-        Integer v = 555558;
-        BigInteger v3 = BigInteger.valueOf(555555);
-        System.out.println(v3.equals(v));
+        int ont = 99999;
+        int two = 99999;
+        long lo = (long) ont * (long) two;
+        System.out.println(lo);
     }
 
 
