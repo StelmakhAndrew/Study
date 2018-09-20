@@ -9,7 +9,6 @@ public class Test3 {
 
     private static void polindrom(long elem, int eei) {
         BigInteger result;
-
         boolean flag = true;
         String stroka = "";
         result = BigInteger.valueOf(elem * eei);
