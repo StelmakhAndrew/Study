@@ -1,6 +1,4 @@
-package Shasa;
-
-import java.util.Arrays;
+package Shasha;
 
 public class L2 {
     public static void main(String[] args) {

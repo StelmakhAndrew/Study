@@ -1,4 +1,4 @@
-package Shasa;
+package Shasha;
 
 public class L1 {
 

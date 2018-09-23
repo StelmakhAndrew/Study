@@ -1,10 +1,5 @@
 package SP2;
 
-import Codility.Lesson2_1;
-import Shasa.L2_1;
-
-import java.math.BigInteger;
-
 public class d {
     public static void main(String[] args) {
 //        int [] A = new int[]{3,4,7,6,5};
