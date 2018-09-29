@@ -5,7 +5,7 @@ import static ParallelPrograming.ArithmeticFunctions.*;
 import static ParallelPrograming.Filling.*;
 
 public class Lab2 {
-    private static int N = 1000;
+    private static int N = 4;
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Lab2 started");
         Thread[] threads = new Thread[3];

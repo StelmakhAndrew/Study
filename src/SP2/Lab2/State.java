@@ -8,10 +8,7 @@ public class State {
         this.dlm = dlm;
     }
     public int getItr() {
-        return Itr;
-    }
+        return Itr; }
 
-    public int getDlm() {
-        return dlm;
-    }
+    public int getDlm() { return dlm; }
 }

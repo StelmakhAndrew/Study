@@ -3,7 +3,7 @@ package ParallelPrograming;
 class  Filling {
     static int defaultNumber;
 
-    static synchronized float[] fillArrays(float[] array){
+    static float[] fillArrays(float[] array){
         if (array.length == 4) {
             return new float[]{defaultNumber, defaultNumber, defaultNumber, defaultNumber};
         }else {
@@ -14,7 +14,7 @@ class  Filling {
         }
     }
 
-    static synchronized float[][] fillMatrix(float[][] matrix){
+    static float[][] fillMatrix(float[][] matrix){
         if (matrix[0].length == 4){
             return new float[][] {{defaultNumber, defaultNumber, defaultNumber, defaultNumber},
                                 {defaultNumber, defaultNumber, defaultNumber, defaultNumber},
